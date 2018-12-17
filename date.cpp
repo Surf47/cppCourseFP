@@ -24,10 +24,6 @@ bool operator == (const Date& A, const Date& B){
     } else return false;
 }
 
-bool operator != (const Date& A, const Date& B){
-    return !(A==B);
-}
-
 bool operator<= (const Date& A, const Date& B){
     return (A<B || A==B);
 }
@@ -44,14 +40,14 @@ ostream& operator << (ostream& ost, const Date& date)
     string d=to_string(date.getDay());
     //add zeroes before year to make 4 digits
     for(size_t z = y.size(); z<4; ++z){
-        ost << '0';
+        ost << "0";
     }
     //year
     ost << y << dash;
-    if(m.size()==1) ost << '0';
+    if(m.size()==1) ost << "0";
     //month
     ost << m << dash;
-    if(d.size()==1) ost << '0';
+    if(d.size()==1) ost << "0";
     //day
     ost << d;
 
@@ -77,6 +73,6 @@ int Date::getMonth() const {
 int Date::getYear() const {
     return year_;
 }
-//bool Date::ovd() const {
-//    return ovd_;
-//}
+bool Date::ovd() const {
+    return ovd_;
+}

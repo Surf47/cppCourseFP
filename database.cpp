@@ -57,7 +57,7 @@ void Database::Add(const Date& date, const string& event)
     {
         eventsByDate_[date].push_back(event);
     }*/
-    //    else cout << "already in db" << endl;
+//    else cout << "already in db" << endl;
 }
 
 void Database::Print(ostream& out) const

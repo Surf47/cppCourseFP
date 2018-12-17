@@ -18,7 +18,7 @@ DateComparisonNode::DateComparisonNode(const Comparison& cmp, const Date& date)
     : date_(date), cmp_(cmp) {}
 
 bool DateComparisonNode::Evaluate(const Date& date, const string& event) const {
-    //    if(date.ovd()) return true;
+    if(date.ovd()) return true;
     switch (cmp_)
     {
     case Comparison::Less:
@@ -42,9 +42,9 @@ bool DateComparisonNode::Evaluate(const Date& date, const string& event) const {
 }
 //EventComparisonNode::
 EventComparisonNode::EventComparisonNode (const Comparison& cmp, const string& event)
-    : event_(event), cmp_(cmp) {}
+: event_(event), cmp_(cmp) {}
 bool EventComparisonNode::Evaluate(const Date& date, const string& event) const {
-    //    if(event == "ignore_event_") return true;
+    if(event == "ignore_event_") return true;
     switch (cmp_)
     {
     case Comparison::Less:
